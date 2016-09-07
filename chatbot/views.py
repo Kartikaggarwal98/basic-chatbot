@@ -12,7 +12,7 @@ VERIFY_TOKEN='7thseptember2016'
 
 class MyChatBotView(generic.View):
 	def get(self, request, *args, **kwargs):
-		if self.request.GET('hub.verify_token') == VERIFY_TOKEN:
+		if self.request.GET['hub.verify_token'] == VERIFY_TOKEN:
 			return HttpResponse(self,request.GET['hub.challenge'])
 		else:
 			return HttpResponse('oops invalid token')
