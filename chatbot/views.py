@@ -8,7 +8,7 @@ from django.utils.decorators import method_decorator
 
 # Create your views here.
 
-class MyChatBotView(generic.view):
+class MyChatBotView(generic.View):
 	def get(self, request, *args, **kwargs):
 		if self.request.GET('hub.verify_token') == VERIFY_TOKEN:
 			return HttpResponse(self,request.GET['hub.challenge'])
