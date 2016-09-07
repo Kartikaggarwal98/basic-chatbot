@@ -8,6 +8,8 @@ from django.utils.decorators import method_decorator
 
 # Create your views here.
 
+VERIFY_TOKEN='7thseptember2016'
+
 class MyChatBotView(generic.View):
 	def get(self, request, *args, **kwargs):
 		if self.request.GET('hub.verify_token') == VERIFY_TOKEN:
