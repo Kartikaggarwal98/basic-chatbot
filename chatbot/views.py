@@ -30,21 +30,21 @@ class MyChatBotView(generic.View):
 			return generic.View.dispatch(self,request, *args, **kwargs)
 
 		def post(self, request, *args, **kwargs):
-		incoming_mesage= json.loads(self.request.body.decode('utf-8'))
-		print incoming_mesage
+			incoming_mesage= json.loads(self.request.body.decode('utf-8'))
+			print incoming_mesage
 
-		for entry in incoming_mesage['entry']:
-			for message in entry['messaging']:
-				print message
-				try:
-					sender_id = message['sender']['id']
-					message_text = message['message']['text']
-					post_facebook_message(sender_id,message_text) 
-				except Exception as e:
-					print e
-					pass
+			for entry in incoming_mesage['entry']:
+				for message in entry['messaging']:
+					print message
+					try:
+						sender_id = message['sender']['id']
+						message_text = message['message']['text']
+						post_facebook_message(sender_id,message_text) 
+					except Exception as e:
+						print e
+						pass
 
-		return HttpResponse() 
+			return HttpResponse() 
 
 def index(request):
 	return HttpResponse("HELLO WORLD")
