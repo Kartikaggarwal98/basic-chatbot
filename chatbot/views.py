@@ -9,7 +9,7 @@ import json
 # Create your views here.
 
 VERIFY_TOKEN='7thseptember2016'
-
+PAGE_ACCESS_TOKEN='EAAZAB0AYNpNkBAB5IzMZBTDjZC4peAm861Q4KpzlmdrIff9mjgFtOdRM8V0MyOqS6HD57oqsWZClfVOS7pZB1TUhFBNphjFx9xq6wOPzo0TCelr0roBut5qiZAgaHBh0o8wbEShNYxW0qD2CTn0Nxmfzp3ivUWzcZA3G2IAMYJEpgZDZD'
 class MyChatBotView(generic.View):
 	def get(self, request, *args, **kwargs):
 		if self.request.GET['hub.verify_token'] == VERIFY_TOKEN:
