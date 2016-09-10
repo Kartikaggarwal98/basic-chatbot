@@ -47,12 +47,14 @@ class MyChatBotView(generic.View):
 					sender_id = message['sender']['id']
 					message_text = message['message']['text']
 					print "****",message_text,"****"
-					for key,val in chatdict:
-						if message_text in key:
-							display_message=val[0]
-						else:
-							display_message="$$$error$$$"
-					post_facebook_message(sender_id,display_message) 
+					print "------"
+					print type(message_text)
+					# for key,val in chatdict:
+					# 	if message_text in key:
+					# 		display_message=val[0]
+					# 	else:
+					# 		display_message="$$$error$$$"
+					post_facebook_message(sender_id,message_text) 
 				except Exception as e:
 					print e,"*************"
 					pass
