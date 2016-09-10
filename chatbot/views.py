@@ -23,8 +23,8 @@ def post_facebook_message(fbid,message_text):
 	status = requests.post(post_message_url, headers={"Content-Type": "application/json"},data=response_msg)
 	print status.json()
 
-chatdict={"quotes":["Don't cry because it's over, smile because it happened.",'Be yourself; everyone else is already taken.']
-"jokes":['As long as there are tests, there will be prayer in schools.','What did one ocean say to the other ocean? Nothing, they just waved.','A day without sunshine is like, night.','Born free, taxed to death.','For Sale: Parachute. Only used once, never opened.']}
+# chatdict={"quotes":["Don't cry because it's over, smile because it happened.",'Be yourself; everyone else is already taken.']
+# "jokes":['As long as there are tests, there will be prayer in schools.','What did one ocean say to the other ocean? Nothing, they just waved.','A day without sunshine is like, night.','Born free, taxed to death.','For Sale: Parachute. Only used once, never opened.']}
 class MyChatBotView(generic.View):
 	def get (self, request, *args, **kwargs):
 		if self.request.GET['hub.verify_token'] == VERIFY_TOKEN:
