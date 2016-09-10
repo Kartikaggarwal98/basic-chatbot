@@ -10,6 +10,7 @@ from django.views.decorators.csrf import csrf_exempt
 from django.utils.decorators import method_decorator
 import json
 import requests
+import random
 
 # Create your views here.
 
@@ -22,7 +23,8 @@ def post_facebook_message(fbid,message_text):
 	status = requests.post(post_message_url, headers={"Content-Type": "application/json"},data=response_msg)
 	print status.json()
 
-
+chatdict={quotes:["“Don't cry because it's over, smile because it happened.” ― Dr. Seuss",'“Be yourself; everyone else is already taken.”― Oscar Wilde']
+jokes:['As long as there are tests, there will be prayer in schools.','What did one ocean say to the other ocean? Nothing, they just waved.','A day without sunshine is like, night.','Born free, taxed to death.','For Sale: Parachute. Only used once, never opened.']}
 class MyChatBotView(generic.View):
 	def get (self, request, *args, **kwargs):
 		if self.request.GET['hub.verify_token'] == VERIFY_TOKEN:
@@ -45,8 +47,10 @@ class MyChatBotView(generic.View):
 					sender_id = message['sender']['id']
 					message_text = message['message']['text']
 					print "****",message_text,"****"
-					message_text="keep calm and make a chatbot"
-					post_facebook_message(sender_id,message_text) 
+					for key,val in chatdict:
+						if message_text in key:
+							display_message=val[0]
+					post_facebook_message(sender_id,display_message) 
 				except Exception as e:
 					print e
 					pass
