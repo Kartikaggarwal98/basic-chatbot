@@ -50,6 +50,8 @@ class MyChatBotView(generic.View):
 					for key,val in chatdict:
 						if message_text in key:
 							display_message=val[0]
+						else:
+							display_message="$$$error$$$"
 					post_facebook_message(sender_id,display_message) 
 				except Exception as e:
 					print e,"*************"
