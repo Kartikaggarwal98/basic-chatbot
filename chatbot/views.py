@@ -44,6 +44,8 @@ class MyChatBotView(generic.View):
 				try:
 					sender_id = message['sender']['id']
 					message_text = message['message']['text']
+					print "****",message_text,"****"
+					message_text="keep calm and make a chatbot"
 					post_facebook_message(sender_id,message_text) 
 				except Exception as e:
 					print e
