@@ -47,8 +47,7 @@ class MyChatBotView(generic.View):
 					print "****",message_text,"****"
 					print "------"
 					print type(message_text)
-					chatdict={"quotes":["Don't cry because it's over, smile because it happened.",'Be yourself; everyone else is already taken.']
-								"jokes":['As long as there are tests, there will be prayer in schools.','What did one ocean say to the other ocean? Nothing, they just waved.','A day without sunshine is like, night.','Born free, taxed to death.','For Sale: Parachute. Only used once, never opened.']}
+					chatdict={"quotes":["Don't cry because it's over, smile because it happened.",'Be yourself; everyone else is already taken.'],"jokes":['As long as there are tests, there will be prayer in schools.','What did one ocean say to the other ocean? Nothing, they just waved.','A day without sunshine is like, night.','Born free, taxed to death.','For Sale: Parachute. Only used once, never opened.']}
 					for key,val in chatdict:
 						if str(message_text) in key:
 							display_message=val[0]
