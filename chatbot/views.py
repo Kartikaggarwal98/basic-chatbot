@@ -47,7 +47,7 @@ class MyChatBotView(generic.View):
 					print "****",message_text,"****"
 					print "------"
 					print type(message_text)
-					joke_text=''
+					joke_text=" "
 					jokes = {'stupid':["""Yo' Mama is so stupid, she needs a recipe to make ice cubes.""","""Yo' Mama is so stupid, she thinks DNA is the National Dyslexics Association."""],'fat':["""Yo' Mama is so fat, when she goes to a restaurant, instead of a menu, she gets an estimate.""",""" Yo' Mama is so fat, when the cops see her on a street corner, they yell, "Hey you guys, break it up!" """],'dumb':["""Yo' Mama is so dumb, when God was giving out brains, she thought they were milkshakes and asked for extra thick.""","""Yo' Mama is so dumb, she locked her keys inside her motorcycle."""]}
 					if message_text in jokes:
 						print "%%%%%%%%"
