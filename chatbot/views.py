@@ -47,10 +47,10 @@ class MyChatBotView(generic.View):
 					print "****",message_text,"****"
 					print "------"
 					print type(message_text)
-					jokes = {'stupid': ["""Yo' Mama is so stupid, she needs a recipe to make ice cubes.""","""Yo' Mama is so stupid, she thinks DNA is the National Dyslexics Association."""],'fat':["""Yo' Mama is so fat, when she goes to a restaurant, instead of a menu, she gets an estimate.""",""" Yo' Mama is so fat, when the cops see her on a street corner, they yell, "Hey you guys, break it up!" """],'dumb':["""Yo' Mama is so dumb, when God was giving out brains, she thought they were milkshakes and asked for extra thick.""","""Yo' Mama is so dumb, she locked her keys inside her motorcycle."""]}
+					jokes = {'stupid':["""Yo' Mama is so stupid, she needs a recipe to make ice cubes.""","""Yo' Mama is so stupid, she thinks DNA is the National Dyslexics Association."""],'fat':["""Yo' Mama is so fat, when she goes to a restaurant, instead of a menu, she gets an estimate.""",""" Yo' Mama is so fat, when the cops see her on a street corner, they yell, "Hey you guys, break it up!" """],'dumb':["""Yo' Mama is so dumb, when God was giving out brains, she thought they were milkshakes and asked for extra thick.""","""Yo' Mama is so dumb, she locked her keys inside her motorcycle."""]}
 					if message_text in jokes:
 						print "%%%%%%%%"
-            			joke_text = random.choice(jokes[message_text])
+            			joke_text = random.choice(jokes[str(message_text)])
             		else:
             			print "@@@@@@"
             			joke_text="kolllll"					# chatdict={"quotes":["Don't cry because it's over, smile because it happened.",'Be yourself; everyone else is already taken.'],"jokes":['As long as there are tests, there will be prayer in schools.','What did one ocean say to the other ocean? Nothing, they just waved.','A day without sunshine is like, night.','Born free, taxed to death.','For Sale: Parachute. Only used once, never opened.']}
