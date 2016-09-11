@@ -52,8 +52,8 @@ class MyChatBotView(generic.View):
 					if message_text in jokes:
 						joke_text="random.choice()"
 						print "%%%%%%%%"
-            		else:
-            			print "@@@@@@"
+					else:
+						print "@@@@@@"
             			joke_text="kolllll"					# chatdict={"quotes":["Don't cry because it's over, smile because it happened.",'Be yourself; everyone else is already taken.'],"jokes":['As long as there are tests, there will be prayer in schools.','What did one ocean say to the other ocean? Nothing, they just waved.','A day without sunshine is like, night.','Born free, taxed to death.','For Sale: Parachute. Only used once, never opened.']}
 					# for key,val in chatdict:
 					# 	if str(message_text) in key:
