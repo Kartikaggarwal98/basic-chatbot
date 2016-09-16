@@ -16,6 +16,7 @@ import random
 
 VERIFY_TOKEN='7thseptember2016'
 PAGE_ACCESS_TOKEN='EAAZAB0AYNpNkBAB5IzMZBTDjZC4peAm861Q4KpzlmdrIff9mjgFtOdRM8V0MyOqS6HD57oqsWZClfVOS7pZB1TUhFBNphjFx9xq6wOPzo0TCelr0roBut5qiZAgaHBh0o8wbEShNYxW0qD2CTn0Nxmfzp3ivUWzcZA3G2IAMYJEpgZDZD'
+weather_id = "04db6d681c287b2ff5550d4cea867ad6"
 
 def post_facebook_message(fbid,message_text):
 	post_message_url = 'https://graph.facebook.com/v2.6/me/messages?access_token=%s'%PAGE_ACCESS_TOKEN
@@ -45,28 +46,10 @@ class MyChatBotView(generic.View):
 					sender_id = message['sender']['id']
 					message_text = message['message']['text']
 					print "****",message_text,"****"
-					print "------"
 					print type(message_text)
-					joke_text=" "
-					jokes = {'stupid':["""Yo' Mama is so stupid, she needs a recipe to make ice cubes.""","""Yo' Mama is so stupid, she thinks DNA is the National Dyslexics Association."""],'fat':["""Yo' Mama is so fat, when she goes to a restaurant, instead of a menu, she gets an estimate.""",""" Yo' Mama is so fat, when the cops see her on a street corner, they yell, "Hey you guys, break it up!" """],'dumb':["""Yo' Mama is so dumb, when God was giving out brains, she thought they were milkshakes and asked for extra thick.""","""Yo' Mama is so dumb, she locked her keys inside her motorcycle."""]}
-					if message_text in jokes:
-						joke_text="random.choice()"
-						print "%%%%%%%%"
-					else:
-						print "@@@@@@"
-						joke_text="kolllll"
-					# chatdict={"quotes":["Don't cry because it's over, smile because it happened.",'Be yourself; everyone else is already taken.'],"jokes":['As long as there are tests, there will be prayer in schools.','What did one ocean say to the other ocean? Nothing, they just waved.','A day without sunshine is like, night.','Born free, taxed to death.','For Sale: Parachute. Only used once, never opened.']}
-					# for key,val in chatdict:
-					# 	if str(message_text) in key:
-					# 		print "####",key,"####"
-					# 		display_message=val[0]
-					# 		print val[0]
-					# 	else:
-					# 		print "!!!!!!!!!!!!"
-					# 		display_message=u'$$$error$$$'
-					post_facebook_message(sender_id,joke_text) 
+					post_facebook_message(sender_id,message_text) 
 				except Exception as e:
-					print e,"*************"
+					print e
 					pass
 
 		return HttpResponse()  
